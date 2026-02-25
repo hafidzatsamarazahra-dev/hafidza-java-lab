@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator dua angka sederhana by Hafidza</title>
+    <style>h2{
+        color:rgb(247, 0, 152);
+    }
+        body{
+            font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgb(249, 167, 181);
+        }
+    input{
+        padding: 10px;
+        margin: 5px;
+        width: 100px;
+        background-color: pink;
+    }
+    button{
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: pink;
+    }
+    h3{
+        background-color: palevioletred;
+        /* display: inline-block; 
+    background-color: #d97ca9; 
+    padding: 10px 20px;     
+    border-radius: 8px;      
+    margin-top: 20px;         
+    font-weight: bold;       
+    color: white; */
+    }
+    </style>
+</head>
+<body>
+
+    <h2>Kalkulator Hafidza 💖</h2>
+
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+
+    <button onclick="hitung('+')">+</button>
+    <button onclick="hitung('-')">-</button>
+    <button onclick="hitung('*')">*</button>
+    <button onclick="hitung('/')">/</button>
+
+    <h3 id="hasil">Hasil: </h3>
+
+    <script>
+        function hitung(operator){
+            let n = parseFloat(document.getElementById("angka1").value);
+            let m = parseFloat(document.getElementById("angka2").value);
+            let hasil;
+
+            if(operator === '+'){
+                hasil = n+m;
+            }else if(operator === '-'){
+                hasil = n-m;
+            }else if(operator === '*'){
+                hasil = n*m;
+            }else if(operator === '/'){
+                if(m!=0){
+                    hasil = n/m;
+                }else{
+                    hasil="tidak bisa dibagi nol"
+                }
+            }
+            document.getElementById("hasil").innerText = "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>
